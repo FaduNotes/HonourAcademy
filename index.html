@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +33,7 @@
         
         /* Bottom Navigation */
         .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #0d47a1; display: flex; justify-content: space-around; padding: 12px 0; z-index: 100; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); }
-        .bottom-nav a { color: white; text-decoration: none; text-align: center; font-size: 0.85rem; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .bottom-nav a { color: white; text-decoration: none; text-align: center; font-size: 0.8rem; display: flex; flex-direction: column; align-items: center; gap: 4px; }
         .bottom-nav a span { font-size: 1.4rem; }
         .bottom-nav a.active { color: #ffca28; }
         
@@ -57,7 +57,7 @@
         .made-by span { cursor: pointer; transition: 0.3s; }
         .made-by span:hover { color: #ffca28; }
         
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .logo { font-size: 1.4rem; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .logo { font-size: 1.4rem; } .bottom-nav a { font-size: 0.7rem; } }
     </style>
 </head>
 <body>
@@ -79,11 +79,6 @@
             <p>Daman & Diu's Premier Sports, Fitness & Games Training Academy</p>
             <a href="#contact" class="btn">Join Now</a>
         </div>
-    </section>
-
-    <section class="section" id="about">
-        <h2>About Honour Academy</h2>
-        <p style="text-align: center; max-width: 800px; margin: auto;">Honour Academy Daman & Diu ka professional sports aur fitness training center hai. Hum Pencak Silat, Martial Arts, Athletics, Football, Cricket aur overall fitness training dete hain. Hamara mission hai Daman & Diu ke youth ko national aur international level tak le jana.</p>
     </section>
 
     <section class="section" id="games">
@@ -133,23 +128,27 @@
         <span onclick="openAdmin()">made by Aadil ♥️</span>
     </div>
 
-    <!-- Bottom Navigation -->
+    <!-- Bottom Navigation - UPDATED WITH ABOUT -->
     <div class="bottom-nav">
         <a href="#home" class="active">
             <span>🏠</span>
             Home
         </a>
-        <a href="#games">
+        <a href="games.html">
             <span>🎮</span>
             Games
         </a>
-        <a href="#achievements">
+        <a href="achievements.html">
             <span>🏆</span>
             Achievements
         </a>
         <a href="#" onclick="showNotificationAlert(); return false;">
             <span>📢</span>
             Notice
+        </a>
+        <a href="about.html" target="_blank">
+            <span>ℹ️</span>
+            About
         </a>
     </div>
 
@@ -329,9 +328,13 @@
             `).join('');
         }
 
-        // Bottom nav active state
+        // Bottom nav active state - sirf anchor links ke liye
         document.querySelectorAll('.bottom-nav a').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function(e) {
+                // Agar external link hai ya onclick hai to active na kare
+                if(this.getAttribute('target') === '_blank' || this.getAttribute('onclick')) {
+                    return;
+                }
                 document.querySelectorAll('.bottom-nav a').forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
             });
@@ -346,4 +349,4 @@
         }
     </script>
 </body>
-  </html>
+</html>
