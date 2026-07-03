@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karate Training - Honour Academy</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: #0f0f0f;
+            color: #fff;
+            padding: 20px;
+            padding-bottom: 90px;
+        }
+        .container {max-width: 1000px; margin: 0 auto;}
+        .header {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        h1 {font-size: 2.5rem; margin-bottom: 10px;}
+        .content {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            margin-bottom: 20px;
+        }
+        h2 {color: #FFD700; margin: 25px 0 15px; font-size: 1.8rem; border-bottom: 2px solid #FFD700; padding-bottom: 8px;}
+        h3 {color: #FFA500; margin: 20px 0 10px; font-size: 1.3rem;}
+        p, li {margin-bottom: 12px; color: #ccc;}
+        ul {margin-left: 20px; margin-bottom: 15px;}
+        .highlight {color: #FFD700; font-weight: bold;}
+        .rule-box {
+            background: #2a2a2a;
+            padding: 15px;
+            border-left: 4px solid #FFD700;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .belt-system {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .belt {
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #FFD700;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-btn:hover {background: #FFA500;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🥋 Shotokan Karate</h1>
+            <p>Traditional Japanese Martial Art - Honour Academy Daman & Diu</p>
+        </div>
+        
+        <div class="content">
+            <h2>Karate Kya Hai?</h2>
+            <p>Karate <span class="highlight">"Empty Hand"</span> ka matlab hai - bina hathiyar ke ladne ki kala. <span class="highlight">Shotokan Karate</span> style hum sikhate hai jo Gichin Funakoshi ne banaya tha - duniya ka sabse popular karate form.</p>
+            <p><span class="highlight">Philosophy:</span> "Karate ni sente nashi" - Karate mein pehla attack nahi hota. Self-defense aur character building pe focus.</p>
+            
+            <h2>Training Schedule</h2>
+            <div class="rule-box">
+                <p><strong>Kids Batch (5-12 years):</strong> Mon-Wed-Fri | 5:00 PM - 6:00 PM</p>
+                <p><strong>Teens Batch (13-18 years):</strong> Tue-Thu-Sat | 6:00 PM - 7:30 PM</p>
+                <p><strong>Adults Batch (18+ years):</strong> Mon-Wed-Fri | 7:30 PM - 9:00 PM</p>
+                <p><strong>Black Belt Training:</strong> Daily | 6:00 AM - 7:30 AM</p>
+            </div>
+
+            <h2>Karate Ke 3 Main Parts</h2>
+            <h3>1. KIHON - Basics</h3>
+            <p>Basic techniques ka practice. Stances, punches, kicks, blocks. <span class="highlight">Foundation strong hona chahiye.</span></p>
+            <ul>
+                <li><strong>Dachi (Stances):</strong> Zenkutsu-dachi, Kokutsu-dachi, Kiba-dachi</li>
+                <li><strong>Tsuki (Punches):</strong> Oi-zuki, Gyaku-zuki, Kizami-zuki</li>
+                <li><strong>Geri (Kicks):</strong> Mae-geri, Yoko-geri, Mawashi-geri, Ushiro-geri</li>
+                <li><strong>Uke (Blocks):</strong> Age-uke, Soto-uke, Uchi-uke, Gedan-barai</li>
+            </ul>
+
+            <h3>2. KATA - Forms</h3>
+            <p>Pre-arranged movements imaginary opponents ke against. <span class="highlight">26 Shotokan Kata</span> hote hai. Har belt pe naye kata.</p>
+            <div class="rule-box">
+                <p><strong>Heian Shodan:</strong> White-Yellow Belt - 21 movements</p>
+                <p><strong>Heian Nidan:</strong> Yellow-Orange Belt - 26 movements</p>
+                <p><strong>Heian Sandan:</strong> Orange-Green Belt - 20 movements</p>
+                <p><strong>Heian Yondan:</strong> Green-Blue Belt - 27 movements</p>
+                <p><strong>Heian Godan:</strong> Blue-Brown Belt - 23 movements</p>
+                <p><strong>Tekki Shodan:</strong> Brown Belt - 29 movements</p>
+                <p><strong>Black Belt Kata:</strong> Bassai Dai, Kanku Dai, Jion, Empi, etc.</p>
+            </div>
+
+            <h3>3. KUMITE - Sparring/Fighting</h3>
+            <p>Real opponent ke saath fight practice. 5 types:</p>
+            <ul>
+                <li><span class="highlight">Gohon Kumite:</span> 5-step sparring - Beginners</li>
+                <li><span class="highlight">Sanbon Kumite:</span> 3-step sparring</li>
+                <li><span class="highlight">Kihon Ippon Kumite:</span> 1-step sparring</li>
+                <li><span class="highlight">Jiyu Ippon Kumite:</span> Semi-free sparring</li>
+                <li><span class="highlight">Jiyu Kumite:</span> Free sparring - Tournament style</li>
+            </ul>
+
+            <h2>KUMITE RULES - WKF Competition</h2>
+            <h3>1. Match Format</h3>
+            <div class="rule-box">
+                <p><strong>Duration:</strong> 3 minutes (Men) | 2 minutes (Women) | No break</p>
+                <p><strong>Area:</strong> 8m x 8m matted area</p>
+                <p><strong>Win By:</strong> 8 points lead OR most points after time OR Hansoku (DQ) OR Kiken (forfeit)</p>
+            </div>
+
+            <h3>2. Scoring System</h3>
+            <ul>
+                <li><span class="highlight">IPPON (3 points):</span> Jodan kicks (head), Any technique on thrown/fallen opponent</li>
+                <li><span class="highlight">WAZA-ARI (2 points):</span> Chudan kicks (body)</li>
+                <li><span class="highlight">YUKO (1 point):</span> Chudan ya Jodan punch, Any strike to body</li>
+            </ul>
+
+            <h3>3. Scoring Criteria - Technique Must Have:</h3>
+            <ul>
+                <li><strong>Good Form:</strong> Proper technique</li>
+                <li><strong>Sporting Attitude:</strong> Fair play</li>
+                <li><strong>Vigorous Application:</strong> Power + Speed</li>
+                <li><strong>Zanshin:</span> Awareness after attack</li>
+                <li><strong>Good Timing:</strong> Perfect moment</li>
+                <li><strong>Correct Distance:</strong> Not too close, not too far</li>
+            </ul>
+
+            <h3>4. Prohibited Techniques - Fouls</h3>
+            <div class="rule-box">
+                <p>✗ <strong>Excessive Contact:</strong> Injury causing hit</p>
+                <p>✗ <strong>Attacks to:</strong> Throat, Arms, Legs, Groin, Joints</p>
+                <p>✗ <strong>Open Hand Techniques:</strong> Palm, Finger strikes to face</p>
+                <p>✗ <strong>Dangerous Throws:</strong> Landing on head/neck</p>
+                <p>✗ <strong>Mubobi:</strong> Lack of self-defense - defending nahi karna</p>
+                <p>✗ <strong>Jogai:</strong> Area se bahar nikalna</p>
+                <p>✗ <strong>Waste of Time:</strong> Fighting avoid karna</p>
+                <p><span class="highlight">Penalty:</span> Chukoku (Warning) → Keikoku → Hansoku-Chui → Hansoku (DQ)</p>
+            </div>
+
+            <h2>DOJO KUN - Dojo Rules & Etiquette</h2>
+            <ul>
+                <li><span class="highlight">Rei:</span> Dojo mein enter/exit karte time bow karo</li>
+                <li><span class="highlight">"Oss":</span> Sensei/Senior ki baat ka jawab "Oss" bol ke do</li>
+                <li><span class="highlight">Seiza:</span> Line mein baithne ka proper tareeka</li>
+                <li><span class="highlight">Gi:</span> Karate dress hamesha saaf rakho, properly wear karo</li>
+                <li><span class="highlight">Nails:</span> Short rakho - safety ke liye</li>
+                <li><span class="highlight">Jewellery:</span> Remove karo training se pehle</li>
+                <li><span class="highlight">Late Aana:</span> Seiza mein baitho, Sensei ki permission leke join karo</li>
+                <li><span class="highlight">Respect:</span> Seniors ko respect, Juniors ko help karo</li>
+            </ul>
+
+            <h2>Belt System - KYU & DAN</h2>
+            <div class="belt-system">
+                <div class="belt" style="background:#fff; color:#000;">White Belt<br>10th Kyu<br>0-3 months</div>
+                <div class="belt" style="background:#FFD700; color:#000;">Yellow Belt<br>9th-8th Kyu<br>3-6 months</div>
+                <div class="belt" style="background:#FFA500; color:#000;">Orange Belt<br>7th-6th Kyu<br>6-12 months</div>
+                <div class="belt" style="background:#4CAF50; color:#fff;">Green Belt<br>5th-4th Kyu<br>1-2 years</div>
+                <div class="belt" style="background:#2196F3; color:#fff;">Blue Belt<br>3rd Kyu<br>2-3 years</div>
+                <div class="belt" style="background:#9C27B0; color:#fff;">Purple Belt<br>2nd Kyu<br>3-4 years</div>
+                <div class="belt" style="background:#795548; color:#fff;">Brown Belt<br>1st Kyu<br>4-5 years</div>
+                <div class="belt" style="background:#000; color:#FFD700; border:2px solid #FFD700;">Black Belt<br>1st-10th Dan<br>5+ years</div>
+            </div>
+
+            <h3>Black Belt Exam Requirements - Shodan (1st Dan)</h3>
+            <div class="rule-box">
+                <p>✓ <strong>Kihon:</strong> All basic techniques combination</p>
+                <p>✓ <strong>Kata:</strong> Heian 1-5 + Tekki Shodan + 1 Black belt kata (Bassai Dai)</p>
+                <p>✓ <strong>Kumite:</strong> Jiyu Ippon + Jiyu Kumite 3 rounds</p>
+                <p>✓ <strong>Board Breaking:</strong> 1 inch board with punch/kick</p>
+                <p>✓ <strong>Written Test:</strong> Karate history, terminology, philosophy</p>
+                <p>✓ <strong>Minimum Age:</strong> 16 years</p>
+                <p>✓ <strong>Training Time:</strong> Minimum 4-5 years from White belt</p>
+            </div>
+
+            <h2>Board Breaking - Tameshiwari</h2>
+            <p>Power testing ke liye wooden boards todne padte hai:</p>
+            <ul>
+                <li><strong>Green Belt:</strong> 1 board - Hand technique</li>
+                <li><strong>Blue Belt:</strong> 1 board - Foot technique</li>
+                <li><strong>Brown Belt:</strong> 2 boards - Any technique</li>
+                <li><strong>Black Belt:</strong> 2-3 boards - Spinning/Jumping technique</li>
+            </ul>
+
+            <h2>Karate Terminology - Common Words</h2>
+            <div class="rule-box">
+                <p><strong>Sensei:</strong> Teacher</p>
+                <p><strong>Senpai:</strong> Senior student</p>
+                <p><strong>Kohai:</strong> Junior student</p>
+                <p><strong>Dojo:</strong> Training hall</p>
+                <p><strong>Gi:</strong> Karate uniform</p>
+                <p><strong>Obi:</strong> Belt</p>
+                <p><strong>Hajime:</strong> Begin/Start</p>
+                <p><strong>Yame:</strong> Stop</p>
+                <p><strong>Yoi:</strong> Ready position</p>
+                <p><strong>Rei:</strong> Bow</p>
+                <p><strong>Oss:</strong> Yes/Understood</p>
+                <p><strong>Kiai:</strong> Energy shout during technique</p>
+            </ul>
+
+            <h2>Fees Structure</h2>
+            <p><span class="highlight">Kids Batch (5-12):</span> ₹1500/- month</p>
+            <p><span class="highlight">Teens Batch (13-18):</span> ₹1800/- month</p>
+            <p><span class="highlight">Adults Batch (18+):</span> ₹2000/- month</p>
+            <p><span class="highlight">Admission Fee:</span> ₹1000/- one time (includes Gi + White Belt)</p>
+            <p><span class="highlight">Belt Exam Fee:</span> ₹500 per grading</p>
+            <p><span class="highlight">Black Belt Exam:</span> ₹5000/- (JKA Certification)</p>
+
+            <h2>Why Choose Karate?</h2>
+            <ul>
+                <li>Most disciplined martial art - character building</li>
+                <li>Olympic sport - career opportunities</li>
+                <li>Full body workout - strength + flexibility + stamina</li>
+                <li>Self-defense - real life situations ke liye best</li>
+                <li>Mental focus - concentration, confidence badhti hai</li>
+                <li>Traditional values - respect, humility, perseverance</li>
+            </ul>
+
+            <a href="games.html" class="back-btn">← Back to Games</a>
+        </div>
+    </div>
+</body>
+</html>
