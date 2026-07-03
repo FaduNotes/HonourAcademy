@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honour Academy - Sports, Fitness & Games</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { line-height: 1.6; color: #333; padding-bottom: 70px; }
+        header { background: linear-gradient(135deg, #0d47a1, #1976d2); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; }
+        .logo span { color: #ffca28; }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+        .bell-icon { font-size: 1.5rem; cursor: pointer; position: relative; }
+        .bell-icon.has-notif::after { content: ''; position: absolute; top: 0; right: 0; width: 8px; height: 8px; background: #ff5722; border-radius: 50%; }
+        
+        /* Notification Bar */
+        .notification-bar { background: #ff5722; color: white; text-align: center; padding: 10px; font-weight: 500; display: none; }
+        .notification-bar.show { display: block; animation: slideDown 0.5s; }
+        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+        
+        .hero { background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48') center/cover; height: 80vh; display: flex; align-items: center; text-align: center; color: white; }
+        .hero-content { max-width: 800px; margin: auto; background: rgba(0,0,0,0.6); padding: 2rem; border-radius: 10px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .btn { background: #ffca28; color: #000; padding: 12px 30px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 1rem; text-decoration: none; display: inline-block; }
+        .section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
+        .section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #0d47a1; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: #f5f5f5; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card h3 { color: #1976d2; margin: 1rem 0; }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 1rem; }
+        
+        /* Bottom Navigation */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #0d47a1; display: flex; justify-content: space-around; padding: 12px 0; z-index: 100; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); }
+        .bottom-nav a { color: white; text-decoration: none; text-align: center; font-size: 0.85rem; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .bottom-nav a span { font-size: 1.4rem; }
+        .bottom-nav a.active { color: #ffca28; }
+        
+        /* Admin Panel */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+        .modal-content { background: white; margin: 5% auto; padding: 2rem; border-radius: 10px; max-width: 600px; max-height: 80vh; overflow-y: auto; }
+        .close { float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .admin-form { margin: 1.5rem 0; padding: 1.5rem; border: 2px solid #e0e0e0; border-radius: 8px; }
+        .admin-form h3 { color: #0d47a1; margin-bottom: 1rem; }
+        .admin-form input, .admin-form textarea { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; }
+        .admin-form button { background: #1976d2; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        .delete-btn { background: #d32f2f !important; margin-left: 10px; }
+        
+        .contact { background: #0d47a1; color: white; }
+        .contact form { max-width: 600px; margin: auto; }
+        .contact input, .contact textarea { width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 5px; }
+        footer { background: #000; color: white; text-align: center; padding: 2rem; }
+        
+        /* Made by Aadil - Admin Link */
+        .made-by { text-align: center; padding: 1rem; background: #111; color: #666; font-size: 0.8rem; }
+        .made-by span { cursor: pointer; transition: 0.3s; }
+        .made-by span:hover { color: #ffca28; }
+        
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .logo { font-size: 1.4rem; } }
+    </style>
+</head>
+<body>
+    <!-- Notification Bar -->
+    <div id="notificationBar" class="notification-bar"></div>
+
+    <header>
+        <nav>
+            <div class="logo">HONOUR <span>ACADEMY</span></div>
+            <div class="nav-right">
+                <div class="bell-icon" id="bellIcon" onclick="showNotificationAlert()">🔔</div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Build Champions, Build Character</h1>
+            <p>Daman & Diu's Premier Sports, Fitness & Games Training Academy</p>
+            <a href="#contact" class="btn">Join Now</a>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>About Honour Academy</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto;">Honour Academy Daman & Diu ka professional sports aur fitness training center hai. Hum Pencak Silat, Martial Arts, Athletics, Football, Cricket aur overall fitness training dete hain. Hamara mission hai Daman & Diu ke youth ko national aur international level tak le jana.</p>
+    </section>
+
+    <section class="section" id="games">
+        <h2>Our Programs</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🥋 Martial Arts</h3>
+                <p>Pencak Silat, Karate, Taekwondo. Self-defense aur competition training by certified coaches.</p>
+            </div>
+            <div class="card">
+                <h3>💪 Fitness Training</h3>
+                <p>Strength, conditioning, weight loss, personal training. Modern equipment ke saath.</p>
+            </div>
+            <div class="card">
+                <h3>⚽ Sports Coaching</h3>
+                <p>Football, Cricket, Athletics. Age-group wise training aur tournament preparation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section" id="achievements">
+        <h2>Our Achievements</h2>
+        <div class="grid" id="achievementsGrid">
+            <!-- Achievements yahan load honge -->
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <h2 style="color: white;">Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <textarea rows="4" placeholder="Which program are you interested in?"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <p style="text-align: center; margin-top: 2rem;">📍 Daman & Diu, India | 📞 +91 XXXXX XXXXX | ✉️ info@honouracademy.in</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Honour Academy. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Made by Aadil - Admin Access -->
+    <div class="made-by">
+        <span onclick="openAdmin()">made by Aadil ♥️</span>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="#home" class="active">
+            <span>🏠</span>
+            Home
+        </a>
+        <a href="#games">
+            <span>🎮</span>
+            Games
+        </a>
+        <a href="#achievements">
+            <span>🏆</span>
+            Achievements
+        </a>
+        <a href="#" onclick="showNotificationAlert(); return false;">
+            <span>📢</span>
+            Notice
+        </a>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAdmin()">&times;</span>
+            <h2>Admin Panel</h2>
+            
+            <div id="loginForm">
+                <input type="password" id="adminPassword" placeholder="Enter Admin Password">
+                <button onclick="loginAdmin()">Login</button>
+            </div>
+
+            <div id="adminControls" style="display:none;">
+                <!-- Add Notification -->
+                <div class="admin-form">
+                    <h3>Add Notification</h3>
+                    <input type="text" id="notifText" placeholder="Notification text - eg: Admissions Open 2026">
+                    <button onclick="addNotification()">Show Notification</button>
+                    <button onclick="clearNotification()" class="delete-btn">Clear Notification</button>
+                </div>
+
+                <!-- Add Achievement -->
+                <div class="admin-form">
+                    <h3>Add Achievement</h3>
+                    <input type="text" id="achTitle" placeholder="Achievement Title - eg: National Gold Medal">
+                    <input type="url" id="achImage" placeholder="Image URL - eg: https://imgur.com/xyz.jpg">
+                    <textarea id="achDesc" rows="3" placeholder="Description"></textarea>
+                    <button onclick="addAchievement()">Add Achievement</button>
+                </div>
+
+                <div class="admin-form">
+                    <h3>Manage Achievements</h3>
+                    <div id="manageAchievements"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ADMIN_PASS = "philia";
+        
+        // Load data on page load
+        window.onload = function() {
+            loadNotification();
+            loadAchievements();
+            updateBellIcon();
+        };
+
+        // Bell Icon Functions
+        function showNotificationAlert() {
+            const notif = localStorage.getItem('honour_notif');
+            if(notif) {
+                alert('📢 Notice: ' + notif);
+            } else {
+                alert('No new notifications');
+            }
+        }
+        
+        function updateBellIcon() {
+            const notif = localStorage.getItem('honour_notif');
+            const bell = document.getElementById('bellIcon');
+            if(notif) {
+                bell.classList.add('has-notif');
+            } else {
+                bell.classList.remove('has-notif');
+            }
+        }
+
+        // Admin Panel Functions
+        function openAdmin() {
+            document.getElementById('adminModal').style.display = 'block';
+        }
+        function closeAdmin() {
+            document.getElementById('adminModal').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('adminControls').style.display = 'none';
+            document.getElementById('adminPassword').value = '';
+        }
+        function loginAdmin() {
+            const pass = document.getElementById('adminPassword').value;
+            if(pass === ADMIN_PASS) {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('adminControls').style.display = 'block';
+                renderManageAchievements();
+            } else {
+                alert('Wrong Password!');
+            }
+        }
+
+        // Notification Functions
+        function addNotification() {
+            const text = document.getElementById('notifText').value;
+            if(text) {
+                localStorage.setItem('honour_notif', text);
+                loadNotification();
+                updateBellIcon();
+                document.getElementById('notifText').value = '';
+                alert('Notification Added!');
+            }
+        }
+        function clearNotification() {
+            localStorage.removeItem('honour_notif');
+            loadNotification();
+            updateBellIcon();
+            alert('Notification Cleared!');
+        }
+        function loadNotification() {
+            const notif = localStorage.getItem('honour_notif');
+            const bar = document.getElementById('notificationBar');
+            if(notif) {
+                bar.textContent = '📢 ' + notif;
+                bar.classList.add('show');
+            } else {
+                bar.classList.remove('show');
+            }
+        }
+
+        // Achievement Functions
+        function addAchievement() {
+            const title = document.getElementById('achTitle').value;
+            const image = document.getElementById('achImage').value;
+            const desc = document.getElementById('achDesc').value;
+            
+            if(title && image) {
+                let achievements = JSON.parse(localStorage.getItem('honour_achievements') || '[]');
+                achievements.push({id: Date.now(), title, image, desc});
+                localStorage.setItem('honour_achievements', JSON.stringify(achievements));
+                loadAchievements();
+                renderManageAchievements();
+                document.getElementById('achTitle').value = '';
+                document.getElementById('achImage').value = '';
+                document.getElementById('achDesc').value = '';
+                alert('Achievement Added!');
+            } else {
+                alert('Title aur Image URL required hai!');
+            }
+        }
+        
+        function deleteAchievement(id) {
+            let achievements = JSON.parse(localStorage.getItem('honour_achievements') || '[]');
+            achievements = achievements.filter(a => a.id !== id);
+            localStorage.setItem('honour_achievements', JSON.stringify(achievements));
+            loadAchievements();
+            renderManageAchievements();
+        }
+
+        function loadAchievements() {
+            const achievements = JSON.parse(localStorage.getItem('honour_achievements') || '[]');
+            const grid = document.getElementById('achievementsGrid');
+            if(achievements.length === 0) {
+                grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">No achievements yet. Add from Admin Panel.</p>';
+                return;
+            }
+            grid.innerHTML = achievements.map(a => `
+                <div class="card">
+                    <img src="${a.image}" alt="${a.title}">
+                    <h3>${a.title}</h3>
+                    <p>${a.desc || ''}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderManageAchievements() {
+            const achievements = JSON.parse(localStorage.getItem('honour_achievements') || '[]');
+            const container = document.getElementById('manageAchievements');
+            if(achievements.length === 0) {
+                container.innerHTML = '<p>No achievements added yet.</p>';
+                return;
+            }
+            container.innerHTML = achievements.map(a => `
+                <div style="display:flex; justify-content:space-between; align-items:center; margin:10px 0; padding:10px; background:#f5f5f5; border-radius:5px;">
+                    <span>${a.title}</span>
+                    <button onclick="deleteAchievement(${a.id})" class="delete-btn" style="padding:5px 10px;">Delete</button>
+                </div>
+            `).join('');
+        }
+
+        // Bottom nav active state
+        document.querySelectorAll('.bottom-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.bottom-nav a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('adminModal');
+            if (event.target == modal) {
+                closeAdmin();
+            }
+        }
+    </script>
+</body>
+  </html>
