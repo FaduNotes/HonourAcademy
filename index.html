@@ -128,7 +128,7 @@
         <span onclick="openAdmin()">made by Aadil ♥️</span>
     </div>
 
-    <!-- Bottom Navigation - UPDATED WITH ABOUT -->
+    <!-- Bottom Navigation - WHATSAPP LINK ADDED -->
     <div class="bottom-nav">
         <a href="#home" class="active">
             <span>🏠</span>
@@ -142,7 +142,7 @@
             <span>🏆</span>
             Achievements
         </a>
-        <a href="#" onclick="showNotificationAlert(); return false;">
+        <a href="https://chat.whatsapp.com/YOUR_GROUP_LINK" target="_blank">
             <span>📢</span>
             Notice
         </a>
@@ -331,8 +331,8 @@
         // Bottom nav active state - sirf anchor links ke liye
         document.querySelectorAll('.bottom-nav a').forEach(link => {
             link.addEventListener('click', function(e) {
-                // Agar external link hai ya onclick hai to active na kare
-                if(this.getAttribute('target') === '_blank' || this.getAttribute('onclick')) {
+                // Agar external link hai to active na kare
+                if(this.getAttribute('target') === '_blank') {
                     return;
                 }
                 document.querySelectorAll('.bottom-nav a').forEach(l => l.classList.remove('active'));
