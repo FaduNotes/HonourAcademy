@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martial Arts Programs - Honour Academy</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: #0f0f0f;
+            color: #fff;
+            padding: 20px;
+            padding-bottom: 90px;
+        }
+        .container {max-width: 1200px; margin: 0 auto;}
+        .header {
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        h1 {font-size: 2.5rem; margin-bottom: 10px;}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .card:hover {
+            border-color: #FFD700;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(255,215,0,0.2);
+        }
+        .card h3 { color: #FFD700; margin: 1rem 0; font-size: 1.5rem; }
+        .card p { color: #ccc; margin-bottom: 15px; }
+        .card a { text-decoration: none; color: inherit; }
+        .view-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #FFD700;
+            color: #000;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .view-btn:hover { background: #FFA500; }
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #1976d2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .back-btn:hover {background: #0d47a1;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🥋 Martial Arts Programs</h1>
+            <p>Honour Academy - Choose Your Fighting Style</p>
+        </div>
+        
+        <div class="grid">
+            <a href="karate.html">
+                <div class="card">
+                    <h3>🥋 Karate</h3>
+                    <p>Traditional Japanese martial art. Discipline, kata, kumite aur self-defense training.</p>
+                    <div class="view-btn">View Rules →</div>
+                </div>
+            </a>
+            
+            <a href="silat.html">
+                <div class="card">
+                    <h3>🥊 Pencak Silat</h3>
+                    <p>Indonesian martial art. Fast strikes, grappling aur weapon training.</p>
+                    <div class="view-btn">View Rules →</div>
+                </div>
+            </a>
+            
+            <a href="taekwondo.html">
+                <div class="card">
+                    <h3>🦶 Taekwondo</h3>
+                    <p>Korean martial art famous for high kicks. Olympic sport training available.</p>
+                    <div class="view-btn">View Rules →</div>
+                </div>
+            </a>
+            
+            <a href="wushu.html">
+                <div class="card">
+                    <h3>🐉 Wushu</h3>
+                    <p>Chinese martial art. Forms, acrobatics aur traditional weapons training.</p>
+                    <div class="view-btn">View Rules →</div>
+                </div>
+            </a>
+            
+            <a href="boxing.html">
+                <div class="card">
+                    <h3>🥊 Boxing</h3>
+                    <p>Professional boxing training. Fitness, footwork, punching combinations.</p>
+                    <div class="view-btn">View Rules →</div>
+                </div>
+            </a>
+            
+            <a href="athletics.html">
+                <div class="card">
+                    <h3>🏃 Athletics</h3>
+                    <p>Track & field events. Running, jumping, throwing - competition preparation.</p>
+                    <div class="view-btn">View Rules →</div>
+                </div>
+            </a>
+            
+            <a href="kickboxing.html">
+                <div class="card">
+                    <h3>🤼 Kickboxing</h3>
+                    <p>Hybrid combat sport. Punch + kick combinations for fitness & self-defense.</p>
+                    <div class="view-btn">View Rules →</div>
+                </div>
+            </a>
+            
+            <a href="mma.html">
+                <div class="card">
+                    <h3>🥋 MMA</h3>
+                    <p>Mixed Martial Arts. Grappling, striking, ground fighting - complete fighter training.</p>
+                    <div class="view-btn">View Rules →</div>
+                </div>
+            </a>
+        </div>
 
+        <center>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </center>
+    </div>
+</body>
+</html>
