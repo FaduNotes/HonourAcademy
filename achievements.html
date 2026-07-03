@@ -1,59 +1,180 @@
-        <!-- Gold Medalists -->
-        <h3 style="grid-column: 1/-1; color: #FFD700; text-align: center; margin: 2rem 0 1rem;">🥇 Gold Medalists</h3>
-        <div class="grid">
-            <div class="card achievement-frame" data-type="gold">
-                <img src="gold1.jpg" alt="Gold Medalist">
-                <h3>Rahul Kumar</h3>
-                <p class="achievement-desc">Bihar State Karate Championship - 2026</p>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Achievements</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 2rem 1rem;
+        }
+        
+       .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
+       .back-btn {
+            display: inline-block;
+            background: #FFD700;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+        
+        /* Grid Layout - Teri drawing jaisa */
+       .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem 1.5rem;
+        }
+        
+        /* Mobile pe 2 column */
+        @media (max-width: 768px) {
+           .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem 1rem;
+            }
+            h1 { font-size: 2rem; }
+        }
+        
+        /* Box + Photo + Naam */
+       .ach-box {
+            text-align: center;
+        }
+        
+       .ach-photo {
+            background: #1a1a1a;
+            border: 3px solid #00ff88; /* Green border */
+            border-radius: 15px;
+            padding: 8px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+       .ach-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+        }
+        
+       .ach-photo img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+        
+       .ach-name {
+            color: #ff4444; /* Red naam */
+            font-weight: 600;
+            font-size: 1rem;
+            background: #1a1a1a;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        
+        <h1>Our Achievements 🏆</h1>
+        
+        <!-- Achievements Grid -->
+        <div class="achievements-grid">
+            <!-- Box 1 -->
+            <div class="ach-box">
+                <div class="ach-photo">
+                    <img src="student1.jpg" alt="Student">
+                </div>
+                <p class="ach-name">Rahul Kumar</p>
             </div>
-            <div class="card achievement-frame" data-type="gold">
-                <img src="gold2.jpg" alt="Gold Medalist">
-                <h3>Priya Singh</h3>
-                <p class="achievement-desc">District Level Tournament - 2025</p>
-            </div>
-            <div class="card achievement-frame" data-type="gold">
-                <img src="gold3.jpg" alt="Gold Medalist">
-                <h3>Aman Verma</h3>
-                <p class="achievement-desc">Inter-School Championship - 2025</p>
-            </div>
-            <div class="card achievement-frame" data-type="gold">
-                <img src="gold4.jpg" alt="Gold Medalist">
-                <h3>Sneha Gupta</h3>
-                <p class="achievement-desc">Open Karate Tournament - 2024</p>
-            </div>
-        </div>
 
-        <!-- Silver Medalists -->
-        <h3 style="grid-column: 1/-1; color: #C0C0C0; text-align: center; margin: 2rem 0 1rem;">🥈 Silver Medalists</h3>
-        <div class="grid">
-            <div class="card achievement-frame" data-type="silver">
-                <img src="silver1.jpg" alt="Silver Medalist">
-                <h3>Rohit Sharma</h3>
-                <p class="achievement-desc">Bihar State Karate Championship - 2026</p>
+            <!-- Box 2 -->
+            <div class="ach-box">
+                <div class="ach-photo">
+                    <img src="student2.jpg" alt="Student">
+                </div>
+                <p class="ach-name">Priya Singh</p>
             </div>
-            <div class="card achievement-frame" data-type="silver">
-                <img src="silver2.jpg" alt="Silver Medalist">
-                <h3>Anjali Kumari</h3>
-                <p class="achievement-desc">District Level Tournament - 2025</p>
-            </div>
-            <div class="card achievement-frame" data-type="silver">
-                <img src="silver3.jpg" alt="Silver Medalist">
-                <h3>Vikash Patel</h3>
-                <p class="achievement-desc">Inter-School Championship - 2025</p>
-            </div>
-        </div>
 
-        <!-- Bronze Medalists -->
-        <h3 style="grid-column: 1/-1; color: #CD7F32; text-align: center; margin: 2rem 0 1rem;">🥉 Bronze Medalists</h3>
-        <div class="grid">
-            <div class="card achievement-frame" data-type="bronze">
-                <img src="bronze1.jpg" alt="Bronze Medalist">
-                <h3>Neha Singh</h3>
-                <p class="achievement-desc">Bihar State Karate Championship - 2026</p>
+            <!-- Box 3 -->
+            <div class="ach-box">
+                <div class="ach-photo">
+                    <img src="student3.jpg" alt="Student">
+                </div>
+                <p class="ach-name">Aman Verma</p>
             </div>
-            <div class="card achievement-frame" data-type="bronze">
-                <img src="bronze2.jpg" alt="Bronze Medalist">
-                <h3>Karan Raj</h3>
-                <p class="achievement-desc">District Level Tournament - 2025</p>
+
+            <!-- Box 4 -->
+            <div class="ach-box">
+                <div class="ach-photo">
+                    <img src="student4.jpg" alt="Student">
+                </div>
+                <p class="ach-name">Sneha Gupta</p>
+            </div>
+
+            <!-- Box 5 -->
+            <div class="ach-box">
+                <div class="ach-photo">
+                    <img src="student5.jpg" alt="Student">
+                </div>
+                <p class="ach-name">Rohit Sharma</p>
+            </div>
+
+            <!-- Box 6 -->
+            <div class="ach-box">
+                <div class="ach-photo">
+                    <img src="student6.jpg" alt="Student">
+                </div>
+                <p class="ach-name">Anjali Kumari</p>
+            </div>
+
+            <!-- Box 7 -->
+            <div class="ach-box">
+                <div class="ach-photo">
+                    <img src="student7.jpg" alt="Student">
+                </div>
+                <p class="ach-name">Vikash Patel</p>
+            </div>
+
+            <!-- Box 8 -->
+            <div class="ach-box">
+                <div class="ach-photo">
+                    <img src="student8.jpg" alt="Student">
+                </div>
+                <p class="ach-name">Neha Singh</p>
+            </div>
+
+            <!-- Box 9 -->
+            <div class="ach-box">
+                <div class="ach-photo">
+                    <img src="student9.jpg" alt="Student">
+                </div>
+                <p class="ach-name">Karan Raj</p>
             </div>
         </div>
+    </div>
+</body>
+</html>
